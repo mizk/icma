@@ -1,0 +1,15 @@
+syntax="proto3";
+option csharp_namespace="libicma.codecs";
+option go_package="/codecs";
+option optimize_for=SPEED;
+message Header{
+    string name=1;
+    int64 frameCount=2;
+    string version=3;
+}
+
+message Frame{
+    int64 order=1;
+    bytes secret=2;
+    bytes data=3;
+}
